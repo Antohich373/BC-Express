@@ -384,21 +384,16 @@ input[type="radio"].visually-hidden {
 
 @media (max-width: 680px) { 
     .header-preview {
-        background-position: -540px 0px;
         padding-top: 51px;
     }
 }
 
-@media (max-width: 550px) { 
-    .header-preview {
-        background-position: -640px 0px;
-        padding-top: 51px;
-    }
-}
 
 @media (max-width: 550px) { 
     .header-preview {
-        background-position: -1040px 0px;
+        background-image: url('../img/prew-mobile.jpg');
+        background-position: 0px -100px;
+        background-repeat: no-repeat;
         padding-top: 45px;
     }
 }
@@ -611,6 +606,7 @@ input[type="radio"].visually-hidden {
         padding-left: 0;
         padding-right: 0;
         padding-top: 0;
+        padding-top: 30px;
     } 
 }
 
