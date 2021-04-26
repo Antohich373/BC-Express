@@ -764,8 +764,8 @@ input[type="radio"].visually-hidden {
 .features-card {
     position: relative;
     width: 257px;
-    min-height: 267px;
-    padding-top: 70px;
+    min-height: 257px;
+    padding-top: 20px;
     padding-bottom: 15px;
     padding-left: 30px;
     padding-right: 30px;
@@ -776,6 +776,10 @@ input[type="radio"].visually-hidden {
     margin: 0 auto;
     margin-bottom: 25px;
     margin-top: 20px;
+}
+
+.features-card img {
+    margin-left: calc(50% - 25px);
 }
 
 .features-card:hover {
@@ -794,6 +798,10 @@ input[type="radio"].visually-hidden {
         border-radius: 12px;
         margin-bottom: 10px;
         margin-top: 0px;
+        min-height: 267px;
+    }
+    .features-card img{
+        margin-left: 0;
     }
 }
 
