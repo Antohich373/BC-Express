@@ -32,6 +32,13 @@ let callModal = document.querySelector('.order-callModal')
 let successfulModal = document.querySelector('.successful')
 let sendingModal = document.querySelector('.sending')
 
+let darkenedCloseModal = document.querySelector('.darkened-background')
+
+darkenedCloseModal.addEventListener('click', function() {
+    applicationModal.classList.remove('leave-request-open')
+    callModal.classList.remove('order-callModal-open')
+    darkenedBackground.classList.remove('darkened-background-open')
+})
 
 //Обрабочик на модельное окно 'доставка биологического материала'
 applicationHeader.addEventListener('click', function() {
@@ -84,6 +91,17 @@ cloceModalSending.addEventListener('click', function() {
 })
 
 buttonCloseModalSending.addEventListener('click', function() {
+    sendingModal.classList.remove('sending-completed-open')
+})
+
+let successfulCloseModal = document.querySelector('.successful-application--dark')
+let sendingCloseModal = document.querySelector('.sending-completed--dark')
+
+successfulCloseModal.addEventListener('click', function() {
+    successfulModal.classList.remove('successful-application-open')
+})
+
+sendingCloseModal.addEventListener('click', function() {
     sendingModal.classList.remove('sending-completed-open')
 })
 
@@ -204,12 +222,10 @@ new Swiper('.features-container', {
 
     breakpoints: {
         320: {
-            loop:true,
             slidesPerView: 1,
             spaceBetween: 0,
         },
         375: {
-            loop: true,
             centeredSledes: true,
             spaceBetween: -90,
             slidesPerView: 1,
