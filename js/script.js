@@ -244,6 +244,7 @@ formCall.addEventListener('submit', function(e) {
         inputCall.value = ''
       }else {
         console.log(json)
+        e.preventDefault();
       }
 
     })
