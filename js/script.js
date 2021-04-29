@@ -228,7 +228,7 @@ formCall.addEventListener('submit', function(e) {
   var data = new FormData(this) // Сборка формы 
   var url = 'https://jsonplaceholder.typicode.com/posts'
   fetch(url, {
-      method: 'post',
+      method: 'get',
       headers: {
         "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
       },
