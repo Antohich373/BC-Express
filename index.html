@@ -218,13 +218,13 @@
         <div class="application-content">
           <h2 class="application-content--title">Нужна транспортировка биологического материала? </h2>
           <p class="application-content--subtitle">Оставьте заявку и мы перезвоним Вам </p>
-          <form class="application-form" method="GET" action="#">
+          <form class="application-form" method="POST" action="#" autocomplete="off">
             <div class="application-form--wrap">
               <fieldset class="application-fieldset">
-                <input class="application-input application-input--name" type="text" name="name" placeholder="Ваше имя">
+                <input class="application-input application-input--name" type="text" name="name" placeholder="Ваше имя" required minlength="2" max="16">
               </fieldset>
               <fieldset class="application-fieldset">
-                <input class="application-input application-input--tel" type="tel" name="tel" placeholder="+7(999) 999-99-99">
+                <input class="application-input application-input--tel" type="tel" name="tel" placeholder="+7(999) 999-99-99" required>
               </fieldset>
               <button class="application-form--button button-leave-request" type="submit">Оставить заявку</button>            
             </div>
@@ -278,7 +278,7 @@
           <button class="location-call--button button-order-call" type="button">Заказать звонок</button>
         </div>
         <div class="location-map">
-          <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A03aafbde9f2a0fd69775a020dc5732137ff9da1db3cc9837c80b335a6aad2f39&amp;source=constructor" width="804" height="487"  frameborder="0"></iframe>
+          <iframe class="map" src="https://yandex.ru/map-widget/v1/?um=constructor%3A03aafbde9f2a0fd69775a020dc5732137ff9da1db3cc9837c80b335a6aad2f39&amp;source=constructor" width="804" height="487" scrolling="no" frameborder="0"></iframe>
         </div>        
       </div>
     </section>
@@ -327,13 +327,13 @@
   <div class="leave-request request">
     <h2 class="request-title">Оставить заявку на доставку биологического материала</h2>
     <p class="request-subtitle">Оставьте заявку и мы перезвоним Вам в ближайшее время </p>
-    <form class="request-form" method="GET" action="#">
+    <form class="request-form" method="POST" autocomplete="off">
       <div class="request-form--wrap">
         <fieldset class="request-fieldset">
-          <input class="request-input request-input--name" type="text" name="name" placeholder="Ваше имя">
+          <input class="request-input request-input--name" type="text" name="name" placeholder="Ваше имя" minlength="2" required>
         </fieldset>
         <fieldset class="request-fieldset">
-          <input class="request-input request-input--tel" type="tel" name="tel" placeholder="+7(999) 999-99-99">
+          <input class="request-input request-input--tel" type="tel" name="tel" placeholder="+7(999) 999-99-99" required>
         </fieldset>
         <button class="request-form--button" type="submit">Оставить заявку</button>            
       </div>
@@ -349,10 +349,10 @@
   <div class="order-callModal call">
     <h2 class="call-title">Оставить заявку на доставку биологического материала</h2>
     <p class="call-subtitle">Оставьте заявку и мы перезвоним Вам в ближайшее время </p>
-    <form class="call-form" method="GET" action="#">
+    <form class="call-form" method="POST" action="#" autocomplete="off">
       <div class="call-form--wrap">
         <fieldset class="call-fieldset">
-          <input class="call-input call-input--tel" type="tel" name="tel" placeholder="+7(999) 999-99-99">
+          <input class="call-input call-input--tel" type="tel" name="tel" placeholder="+7(999) 999-99-99" required>
         </fieldset>
         <button class="call-form--button" type="submit">Оставить заявку</button>            
       </div>

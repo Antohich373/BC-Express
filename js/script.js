@@ -214,6 +214,94 @@ window.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+let formCall = document.querySelector('.call-form')
+let formRequest = document.querySelector('.request-form')
+let formApplication = document.querySelector('.application-form')
+
+let inputCall = document.querySelector('.call-input--tel')
+
+let inputCallRequest = document.querySelector('.request-input--tel')
+let inputNameRequest = document.querySelector('.request-input--name')
+
+formCall.addEventListener('submit', function(e) {
+  e.preventDefault();
+  var data = new FormData(this) // Сборка формы 
+  var url = 'https://jsonplaceholder.typicode.com/posts'
+  fetch(url, {
+      method: 'post',
+      headers: {
+        "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+      },
+      body: data // Отправка самой формы
+    })
+    .then(response => response.json())
+    .then((json) => { // Ответ
+      if (json.id === 101) { // Для примера проверка пройдена если id === 101
+        // Добавление поля
+        callModal.classList.remove('order-callModal-open')
+        darkenedBackground.classList.remove('darkened-background-open')
+        successfulModal.classList.add('successful-application-open')
+        inputCall.value = ''
+      }else {
+        console.log(json)
+      }
+
+    })
+    .catch(err => console.log(err));
+})
+
+formRequest.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var data = new FormData(this) // Сборка формы 
+    var url = 'https://jsonplaceholder.typicode.com/posts'
+    fetch(url, {
+    method: 'post',
+    headers: {
+         "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+    },
+    body: data // Отправка самой формы
+    })
+    .then(response => response.json())
+    .then((json) => { // Ответ
+    if (json.id === 101) { // Для примера проверка пройдена если id === 101
+        // Добавление поля
+        applicationModal.classList.remove('leave-request-open')
+        darkenedBackground.classList.remove('darkened-background-open')
+        sendingCloseModal.classList.add('sending-completed-open')
+        inputCallRequest.value = ''
+        inputNameRequest.value = ''
+    }else {
+        console.log(json)
+    }
+  
+    })
+    .catch(err => console.log(err));
+})
+
+formApplication.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var data = new FormData(this) // Сборка формы 
+    var url = 'https://jsonplaceholder.typicode.com/posts'
+    fetch(url, {
+    method: 'post',
+    headers: {
+        "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+    },
+    body: data // Отправка самой формы
+    })
+    .then(response => response.json())
+    .then((json) => { // Ответ
+    if (json.id === 101) { // Для примера проверка пройдена если id === 101
+        // Добавление поля
+        sendingCloseModal.classList.add('sending-completed-open')
+    }else {
+          console.log(json)
+    }
+  
+    })
+    .catch(err => console.log(err));
+})
+
 new Swiper('.features-container', {
     pagination: {
         el: '.swiper-pagination',
