@@ -223,6 +223,9 @@ let inputCall = document.querySelector('.call-input--tel')
 let inputCallRequest = document.querySelector('.request-input--tel')
 let inputNameRequest = document.querySelector('.request-input--name')
 
+let inputApplicationTel = document.querySelector('.application-input--tel')
+let inputApplicationName = document.querySelector('.application-input--name')
+
 formCall.addEventListener('submit', function(e) {
   e.preventDefault();
   var data = new FormData(this) // Сборка формы 
@@ -244,7 +247,6 @@ formCall.addEventListener('submit', function(e) {
         inputCall.value = ''
       }else {
         console.log(json)
-        e.preventDefault();
       }
 
     })
@@ -295,6 +297,8 @@ formApplication.addEventListener('submit', function(e) {
     if (json.id === 101) { // Для примера проверка пройдена если id === 101
         // Добавление поля
         sendingCloseModal.classList.add('sending-completed-open')
+        inputApplicationTel.value = ''
+        inputApplicationName.value = ''
     }else {
           console.log(json)
     }
